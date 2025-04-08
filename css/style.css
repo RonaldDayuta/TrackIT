@@ -1,0 +1,85 @@
+/* Importing Google Fonts (Poppins font) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+/* Set the default font family and background color for the body */
+body{
+    font-family: 'Poppins', sans-serif; /* Apply Poppins font */
+    background: #ececec; /* Set background color */
+}
+
+/*------------ Login container ------------*/
+.box-area{
+    width: 930px; /* Set the width of the login container */
+}
+
+/*------------ Right box (login form area) ------------*/
+.right-box{
+    padding: 40px 30px 40px 40px; /* Add padding inside the right box */
+}
+
+/*------------ Custom Placeholder Style ------------*/
+::placeholder{
+    font-size: 16px; /* Set font size for placeholders */
+}
+
+/*------------ Border Radius Custom Classes ------------*/
+
+/* Apply border radius of 20px */
+.rounded-4{
+    border-radius: 20px;
+}
+
+/* Apply border radius of 30px */
+.rounded-5{
+    border-radius: 30px;
+}
+
+/*------------ Responsive Styles for small screens (max-width 768px) ------------*/
+@media only screen and (max-width: 768px){
+     /* Adjust box area margins for smaller screens */
+     .box-area{
+        margin: 0 10px;
+     }
+
+     /* Adjust height and overflow for left box */
+     .left-box{
+        height: 100px;
+        overflow: hidden;
+     }
+
+     /* Adjust padding for right box */
+     .right-box{
+        padding: 20px;
+     }
+}
+
+/*------------ Animations for showing and hiding forms ------------*/
+
+/* Hide the login form with opacity 0, invisible, and slide out to the left */
+.right-box.hide-form {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-100%);
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out, transform 0.5s ease-in-out; /* Apply smooth transition */
+}
+
+/* Show the registration form with opacity 1, visible, and slide in from the right */
+.registration-form.hide-form {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(100%);
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out, transform 0.5s ease-in-out; /* Apply smooth transition */
+}
+
+/* Default state for registration form (hidden by default) */
+.registration-form {
+    display: none; /* Hide the registration form */
+    position: relative;
+    z-index: 2; /* Ensure the registration form is on top of other elements */
+}
+
+/* Right box style (for login form) */
+.right-box {
+    position: relative;
+    z-index: 1; /* Ensure the login form is behind the registration form */
+}
